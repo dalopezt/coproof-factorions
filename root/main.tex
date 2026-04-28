@@ -1,5 +1,15 @@
-**Theorem.** The set of natural numbers equal to the sum of the factorials of their own decimal digits is exactly $\{1, 2, 145, 40585\}$. Formally, if we define $f(n) = \sum_{d \,\in\, \text{digits}(n)} d!$, where $\text{digits}(n)$ denotes the list of decimal digits of $n$, then
+**Theorem.** The set of natural numbers that are equal to the sum of the factorials of their digits is exactly $\{1, 2, 145, 40585\}$. That is,
+$$\{\, n \in \mathbb{N} \mid \sigma(n) = n \,\} = \{1,\, 2,\, 145,\, 40585\},$$
+where $\sigma(n)$ denotes the sum of the factorials of the decimal digits of $n$.
 
-$$\{\, n \in \mathbb{N} \mid f(n) = n \,\} = \{1,\, 2,\, 145,\, 40585\}.$$
+*Proof.* We show the two set inclusions separately.
 
-*Proof.* Unsolved.
+$(\supseteq)$ Each element of $\{1, 2, 145, 40585\}$ satisfies $\sigma(n) = n$ by \textbf{Solutions Are Fixpoints}, which verifies the identity directly for each of these four values.
+
+$(\subseteq)$ Let $n \in \mathbb{N}$ satisfy $\sigma(n) = n$. We split into two cases based on the size of $n$.
+
+*Case 1: $n < 10^7$.* By \textbf{Finite Check}, the set $\{\, n \in \mathbb{N} \mid n < 10^7 \text{ and } \sigma(n) = n \,\}$ equals $\{1, 2, 145, 40585\}$, so $n$ belongs to that finite set.
+
+*Case 2: $n \geq 10^7$.* By \textbf{Upper Bound}, for every $n \geq 10^7$ we have $\sigma(n) < n$, which directly contradicts the assumption $\sigma(n) = n$. Hence no solution exists in this range.
+
+Combining both inclusions yields the stated equality. $\blacksquare$
