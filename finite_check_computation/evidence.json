@@ -1,0 +1,35 @@
+{
+  "artifacts": {
+    "decompress_hint": "Python: import gzip,base64,pathlib; raw=base64.b64decode(pathlib.Path('<file>.gz.b64').read_text()); print(gzip.decompress(raw).decode('utf-8')[:500])",
+    "full_result_compressed_b64": "finite_check_computation/evidence_full.json.gz.b64",
+    "full_result_hash_sha256": "89c84dfaf555da89e4daefd4870a802b8b46ba8c5a6ca0bd020eb96972ed7688",
+    "records_csv_compressed_b64": "finite_check_computation/evidence_records.csv.gz.b64",
+    "records_csv_hash_sha256": "d275fa64aa0d92573e7562c95288983fe41247d52b5ef6d41a6b286b463c618c"
+  },
+  "entrypoint": "run",
+  "error": null,
+  "evidence": [
+    1,
+    2,
+    145,
+    40585
+  ],
+  "language": "python",
+  "lean_statement": "{n : \u2115 | n < 10 ^ 7 \u2227 digitFactorialSum n = n} = {1, 2, 145, 40585}",
+  "node_name": "finite_check_computation",
+  "processing_time_seconds": 7.190343,
+  "records_count": 4,
+  "stderr": "",
+  "stdout": "",
+  "sufficient": true,
+  "summary": "Found factorions up to 10000000: [1, 2, 145, 40585]. Match expected [1, 2, 145, 40585]: True.",
+  "target": {
+    "expected": [
+      1,
+      2,
+      145,
+      40585
+    ],
+    "limit": 10000000
+  }
+}

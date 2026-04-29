@@ -1,3 +1,9 @@
-**Theorem (Finite Check Computation).** The set of natural numbers $n$ satisfying $n < 10^7$ and $\text{digitFactorialSum}(n) = n$ is exactly $\{1, 2, 145, 40585\}$, where $\text{digitFactorialSum}(n)$ denotes the sum of the factorials of the decimal digits of $n$.
+```latex
+\section*{Computation Evidence}
 
-*Proof.* Unsolved.
+\textbf{Statement.} Every natural number $n < 10^{7}$ satisfying $n = \sum_{d \mid \text{digits}(n)} d!$ belongs to the set $\{1, 2, 145, 40585\}$, and conversely each element of that set satisfies the property.
+
+\textbf{Method.} A Python program exhaustively evaluated the digit-factorial sum for every non-negative integer $n$ in the range $0 \le n < 10^{7}$, recording all $n$ for which the sum equals $n$ itself. The resulting list was compared against the expected set $\{1, 2, 145, 40585\}$ to confirm an exact match.
+
+\textbf{Evidence Summary.} The search found exactly $4$ factorions below $10^{7}$, namely $n \in \{1, 2, 145, 40585\}$, matching the expected set with verdict \emph{sufficient}; the evidence artifact carries hash \texttt{fed6af63216a0d80}.
+```
